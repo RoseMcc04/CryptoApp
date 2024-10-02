@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "Linux",
+            "name": "rosemcc04-1",
             "includePath": [
                 "${workspaceFolder}/**"
             ],
@@ -12,7 +12,7 @@
             "intelliSenseMode": "linux-clang-x64"
         },
         {
-            "name": "Linux",
+            "name": "rosemcc04-2",
             "includePath": [
                 "${workspaceFolder}/**"
             ],
