@@ -1,14 +1,14 @@
 #pragma once
 
-#include <iostream>
 #include <string>
 #include <vector>
 
-using namespace std;
-
 class Tokenize 
 {
+    public:
+        Tokenize() = default;
+        std::vector<std::string> tokenize(std::string csvLine, char separator);
+
     private: 
-        vector<string> tokenize(string csvLine, char separator);
-        vector<string> tokens;
-}
+        std::vector<std::string> tokens;
+};
