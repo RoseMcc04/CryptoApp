@@ -5,7 +5,6 @@
 #include <string>
 #include <vector>
 #include "OrderBookEntry.h"
-#include "Tokenize.h"
 
 class MerkelMain
 {

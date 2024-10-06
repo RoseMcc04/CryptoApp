@@ -3,7 +3,6 @@
 #include <string>
 #include <vector>
 #include "MerkelMain.h"
-#include "Tokenize.h"
 
 vector<string> Tokenize::tokenize(string csvLine, char separator) 
 {
