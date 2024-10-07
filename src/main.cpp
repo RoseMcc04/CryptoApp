@@ -10,6 +10,6 @@ using namespace std;
 
 int main()
 {
-    CSVReader reader;
+    CSVReader::readCSV("20200317.csv");
     return 0;
 }

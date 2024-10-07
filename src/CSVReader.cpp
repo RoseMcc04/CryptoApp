@@ -1,3 +1,4 @@
+#include <fstream> 
 #include <iostream>
 #include <string>
 #include <vector>
@@ -10,9 +11,27 @@ CSVReader::CSVReader()
 
 }
 
-vector<OrderBookEntry> CSVReader::readCSV(string csvFile) 
+vector<OrderBookEntry> CSVReader::readCSV(string csvFilename) 
 {
+    string line;
     vector<OrderBookEntry> entries;
+    ifstream csvFile{csvFilename};
+    if (csvFile.is_open()) 
+    {
+        while (getline(csvFile, line)) 
+        {
+            try 
+            {
+                OrderBookEntry obe = stringsToOBE(tokenize(line, ','));
+                entries.push_back(obe);
+            }
+            catch (const exception& e) 
+            {
+                cout << "CSVReader::readCSV bad data" << endl;
+            }
+        }
+    }
+    cout << "CSVReader::readCSV read " << entries.size() << " entries" << endl;
     return entries;
 }
 
@@ -28,7 +47,6 @@ OrderBookEntry CSVReader::stringsToOBE(vector<string> tokens)
     {
         price = stod(tokens.at(3));
         amount = stod(tokens.at(4));
-        cout << price << ":" << amount << endl;
     }
     catch (const exception& e) 
     {
