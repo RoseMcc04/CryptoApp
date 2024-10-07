@@ -10,7 +10,7 @@ OrderBookEntry::OrderBookEntry()
     amount = 0;
     timestamp = "";
     product = "";
-    orderType = OrderBookType::ask;
+    orderType = OrderBookType::unknown;
 }
 
 OrderBookEntry::OrderBookEntry(double price, double amount, string timestamp, 
@@ -21,4 +21,20 @@ OrderBookEntry::OrderBookEntry(double price, double amount, string timestamp,
     this->timestamp = timestamp;
     this->product = product;
     this->orderType = orderType;
+}
+
+OrderBookType OrderBookEntry::stringToOrderBookType(string s) 
+{
+    if (s == "ask") 
+    {
+        return OrderBookType::ask;
+    }
+    else if (s == "bid") 
+    {
+        return OrderBookType::bid;
+    }
+    else 
+    {
+        return OrderBookType::unknown;
+    }
 }
