@@ -31,7 +31,7 @@ vector<OrderBookEntry> CSVReader::readCSV(string csvFilename)
             }
         }
     }
-    cout << "CSVReader::readCSV read " << entries.size() << " entries" << endl;
+    cout << "MerkelMain::loadOrderBook read " << entries.size() << " entries" << endl;
     return entries;
 }
 

@@ -10,6 +10,7 @@ using namespace std;
 
 int main()
 {
-    CSVReader::readCSV("20200317.csv");
+    MerkelMain app{};
+    app.init();
     return 0;
 }
